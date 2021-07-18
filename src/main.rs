@@ -22,9 +22,11 @@ fn main() {
             .collect();
 
         if check_sorted(&new_vec) {
-            println!("result is: {:?}", new_vec);
+            println!("o: {:?}", new_vec);
             break;
         }
+
+        println!("x: {:?}", new_vec);
     }
     println!("finished");
 }
