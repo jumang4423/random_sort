@@ -11,6 +11,7 @@ fn main() {
     let buf = fs::read_to_string("input_data").unwrap();
     let mv = buf.split_whitespace().map(|n| i32::from_str(n).unwrap());
     let mut vec: Vec<i32> = Vec::new();
+    let mut counter: i32 = 0;
 
     for d in mv {
         vec.push(d);
@@ -26,9 +27,12 @@ fn main() {
             .cloned()
             .collect();
 
+        counter+=1;
+
         if check_sorted(&new_vec) {
             stop_watch.stop();
             println!("result is: {:?}", new_vec);
+            println!("{} counted", counter);
             println!("elapsed: {}ms", stop_watch.elapsed_ms());
         }
 
